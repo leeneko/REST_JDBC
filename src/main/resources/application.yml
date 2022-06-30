@@ -1,0 +1,28 @@
+server:
+  port: 15746
+
+spring:
+  security:
+    user:
+      name: admin
+      password: 1111
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://demo.caqwhhyqr81s.ap-northeast-2.rds.amazonaws.com:5432/demo
+    username: leeneko
+    password: 11111111
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 60000
+      max-lifetime: 180000
+      maximum-pool-size: 100
+      minimum-idle: 1
+      connection-init-sql: SELECT 1
+      connection-test-query: SELECT CURRENT_DATE
+logging:
+  pattern:
+    console: |
+      %date{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] - %message - %logger{5}:%method:%line
+  level:
+    root: INFO
