@@ -13,6 +13,11 @@ import com.leeneko.user.model.UserIn;
 @RestController
 public class UserController {
 	
+	@Getmapping("/user/test")
+	public String getTest() throws Exception {
+		return "test";
+	}
+	
 	@GetMapping("/user/getList")
 	public List<User> getList(UserIn input) throws Exception {
 		return new GetUserList().getList(input);
